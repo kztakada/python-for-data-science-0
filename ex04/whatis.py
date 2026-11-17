@@ -7,13 +7,14 @@ def main() -> int:
     if len(args) == 0:
         return 0
     if len(args) > 1:
-        print("AssertionError: more than one argument is provided")
+        print("AssertionError: more than one argument is provided",
+              file=sys.stderr)
         return 1
 
     try:
         n = int(args[0])
     except ValueError:
-        print("AssertionError: argument is not an integer")
+        print("AssertionError: argument is not an integer", file=sys.stderr)
         return 1
 
     if n % 2 == 0:
