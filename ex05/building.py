@@ -55,6 +55,8 @@ def main():
         print("")
         return 130
 
+    return 0
+
 
 if __name__ == "__main__":
     main()
