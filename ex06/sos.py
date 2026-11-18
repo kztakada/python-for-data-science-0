@@ -15,13 +15,19 @@ def main():
         "5": ".....", "6": "-....", "7": "--...", "8": "---..", "9": "----.",
     }
     try:
-        assert len(sys.argv) == 2
+        if len(sys.argv) != 2:
+            raise AssertionError
         text = sys.argv[1]
-        assert all(c.upper() in NESTED_MORSE for c in text)
+        if not isinstance(text, str):
+            raise AssertionError
+        if not all(c.upper() in NESTED_MORSE for c in text):
+            raise AssertionError
         print(" ".join(NESTED_MORSE[c.upper()] for c in text))
     except AssertionError:
         print("AssertionError: the arguments are bad")
         return 1
+
+    return 0
 
 
 if __name__ == "__main__":
