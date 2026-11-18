@@ -13,7 +13,7 @@ def main():
         assert digits and all("0" <= digit <= "9" for digit in digits)
         n = int(n_arg)
         is_longer = lambda word: len(word) > n
-        print([word for word in s.split() if is_longer(word)])
+        print([word for word in filter(is_longer, s.split())])
     except (AssertionError, ValueError):
         print("AssertionError: the arguments are bad")
         return 1
