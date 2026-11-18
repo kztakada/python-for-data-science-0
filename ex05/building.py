@@ -43,14 +43,17 @@ def main():
         text = sys.argv[1] if len(sys.argv) == 2 else ""
         if not text:
             print("What is the text to count?")
-            text = sys.stdin.readline()
+            try:
+                text = input() + "\n"
+            except EOFError:
+                text = ""
         print_results(count_chars(text))
     except AssertionError as e:
-        print(f"AssertionError: {e}", file=sys.stderr)
-        sys.exit(1)
+        print(f"AssertionError: {e}")
+        return 1
     except KeyboardInterrupt:
-        print("", file=sys.stderr)
-        sys.exit(130)
+        print("")
+        return 130
 
 
 if __name__ == "__main__":
