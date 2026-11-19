@@ -43,10 +43,7 @@ def main():
         text = sys.argv[1] if len(sys.argv) == 2 else ""
         if not text:
             print("What is the text to count?")
-            try:
-                text = input() + "\n"
-            except EOFError:
-                text = ""
+            text = open(0).readline()
         print_results(count_chars(text))
     except AssertionError as e:
         print(f"AssertionError: {e}")
