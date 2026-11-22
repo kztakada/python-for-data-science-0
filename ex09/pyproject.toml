@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools==59.6.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ft_package"
+version = "0.0.1"
+description = "A sample test package"
+readme = "README.md"
+authors = [{name = "katakada"}, {email = "katakada@student.42tokyo.jp"}]
+requires-python = ">=3.10"
+
+
+
